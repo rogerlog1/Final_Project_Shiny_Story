@@ -6,7 +6,7 @@ ui <- fluidPage(
   
   sidebarLayout(
     sidebarPanel(
-      textInput("Name", "What is your name?", value = "", width = NULL, placeholder = NULL),
+      textInput("Name", "What is your first name?", value = "", width = NULL, placeholder = NULL),
       selectInput("var",
                   label = "What color is your hair?",
                   choices = c("blonde",
@@ -27,22 +27,18 @@ ui <- fluidPage(
                               "the hiking trails",
                               "the beach"),
                   selected = "the park"),
-      sliderInput("Age","Pick a number between 1 and 100", 50, min=1, max=100),
+      sliderInput("Cats","Pick a number between 1 and 100", 50, min=1, max=100),
       textInput("NameFriend", "What is your best friend's name?", value = "", width = NULL, placeholder = NULL),
       textInput("Gang", "A funny noun?", value = "", width = NULL, placeholder = NULL),
      
     ),
     
     mainPanel(
-      textOutput("IntrototheIntro"),
-      br(),
       textOutput("Intro"),
       br(),
       textOutput("selected_var"),
       br(),
-      textOutput("age"),
-      br(),
-      textOutput("name"),
+      textOutput("Cats"),
       br(),
       textOutput("onyaway"),
       br(),
@@ -58,17 +54,19 @@ ui <- fluidPage(
 )
 server <- function(input, output) {
   
-  output$IntrototheIntro <- renderText({paste("")})
-  output$Intro <- renderText({paste("Today is a beautiful day. The sun is shining, the birds are singing... 
-                                    What a perfect day to go to", input$var3,"for a while.", input$Name,
-                                    "reaches their hands above their head, streatching as sunlight poors 
-                                    into the room, through an agape window beside the bed, and into",
-                                    input$Name,"'s bed.")})
-  output$selected_var <- renderText({paste("Your character has", input$var, "hair and", input$var2, "eyes.")})
-  output$age <- renderText({ paste("Brenda has",input$Age,"kids.") })
-  output$name <- renderText({ paste("Your name is",input$Name) })
+  output$Intro <- renderText({paste("On an uneventful Saturday,", input$Name, "wakes up to the sound of rustling 
+                                    leaves on a nearbye tree outside. Today is a beautiful day. The sun is shining, the 
+                                    birds are singing... What a perfect day to go to", input$var3,"for a while you think to yourself. 
+                                    You reach your hands above your head, streatching as sunlight poors into the room.
+                                    You recall; however, that before you can go to", input$var3,"you need to go to 
+                                    the grocery store.")})
+  output$selected_var <- renderText({paste("With one final stretch, you bring yourself out of bed and make your way to the bathroom.
+                                           You take a glance at yourself in the mirror, noting your", input$var, "hair and"
+                                           , input$var2, "eyes. Yup! You're still you! You quickly go through your morning routine
+                                           before heading out for the day.")})
+  output$Cats <- renderText({ paste("Brenda has",input$Cats,"cats.") })
   output$namefriend <- renderText({ paste("You see your best friend",input$NameFriend,"running towards you with a concerned look.") })
-  output$onyaway <- renderText({paste("")})
+  output$onyaway <- renderText({paste("Anyway, that's weird")})
   output$conflict <- renderText({paste("As you are walking down the sidewalk, you spot a group of guys approaching. 
                                        They look like trouble. One locks eyes with you for a little too long before
                                        walking up to you and saying:")})
