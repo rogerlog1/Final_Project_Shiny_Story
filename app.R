@@ -27,7 +27,7 @@ ui <- fluidPage(
                               "the hiking trails",
                               "the beach"),
                   selected = "the park"),
-      sliderInput("Cats","Pick a number between 1 and 100", 50, min=1, max=100),
+      sliderInput("Cats","Pick a number between 2 and 100", 50, min=2, max=100),
       textInput("NameFriend", "What is your best friend's name?", value = "", width = NULL, placeholder = NULL),
       textInput("Gang", "A funny noun?", value = "", width = NULL, placeholder = NULL),
      
@@ -36,9 +36,13 @@ ui <- fluidPage(
     mainPanel(
       textOutput("Intro"),
       br(),
-      textOutput("selected_var"),
+      textOutput("bathroom"),
       br(),
-      textOutput("Cats"),
+      textOutput("Enter"),
+      br(),
+      textOutput("Cats1"),
+      br(), 
+      textOutput("Cats2"),
       br(),
       textOutput("onyaway"),
       br(),
@@ -56,18 +60,22 @@ server <- function(input, output) {
   
   output$Intro <- renderText({paste("On an uneventful Saturday,", input$Name, "wakes up to the sound of rustling 
                                     leaves on a nearbye tree outside. Today is a beautiful day. The sun is shining, the 
-                                    birds are singing... 'What a perfect day to go to", input$var3,"for a while' you think to yourself. 
-                                    You reach your hands above your head, streatching as sunlight poors into the room.
+                                    birds are singing... 'What a perfect day to go to", input$var3,"for a while' you think to 
+                                    yourself. You reach your hands above your head, streatching as sunlight poors into the room.
                                     You recall; however, that before you can go to", input$var3,"you need to go to 
                                     the grocery store.")})
-  output$selected_var <- renderText({paste("With one final stretch, you bring yourself out of bed and make your way to the bathroom.
+  output$bathroom <- renderText({paste("With one final stretch, you bring yourself out of bed and make your way to the bathroom.
                                            You take a glance at yourself in the mirror, noting your", input$var, "hair and"
                                            , input$var2, "eyes. Yup! You're still you! You quickly go through your morning routine
                                            before heading out for the day.")})
-  output$Cats <- renderText({ paste("It isn't long before you arive at the store. Brenda has",input$Cats,"cats.")})
+  output$Enter <- renderText({ paste("It isn't long before you arive at the store. As you enter , you catch a part
+                                    of a conversation between two elderly women.")})
+  output$Cats1 <- renderText({ paste("\"Did you hear? Brenda got another cat.\"")})
+  output$Cats2 <- renderText({ paste("\"Well golly, how many is that now?", input$Cats, "cats?\"")})
   output$namefriend <- renderText({ paste("You see your best friend",input$NameFriend,"running towards you with a concerned look.")})
-  output$onyaway <- renderText({paste("Anyway, that's weird")})
-  output$conflict <- renderText({paste("As you are walking down the sidewalk, you spot a group of guys approaching. 
+  output$onyaway <- renderText({paste("Well that's weird... Anyway, you have some groceries to buy.")})
+  output$conflict <- renderText({paste("With all the groceries bought, you begin heading back home. 
+                                       As you are walking down the sidewalk, you spot a group of guys approaching. 
                                        They look like trouble. One locks eyes with you for a little too long before
                                        walking up to you and saying:")})
   output$gang <- renderText({ paste("\"Don't mess with us, we're the",input$Gang,"Bunch. We rule these streets, capiche? 
