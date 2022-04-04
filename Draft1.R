@@ -56,7 +56,7 @@ server <- function(input, output) {
   
   output$Intro <- renderText({paste("On an uneventful Saturday,", input$Name, "wakes up to the sound of rustling 
                                     leaves on a nearbye tree outside. Today is a beautiful day. The sun is shining, the 
-                                    birds are singing... What a perfect day to go to", input$var3,"for a while you think to yourself. 
+                                    birds are singing... 'What a perfect day to go to", input$var3,"for a while' you think to yourself. 
                                     You reach your hands above your head, streatching as sunlight poors into the room.
                                     You recall; however, that before you can go to", input$var3,"you need to go to 
                                     the grocery store.")})
@@ -64,15 +64,15 @@ server <- function(input, output) {
                                            You take a glance at yourself in the mirror, noting your", input$var, "hair and"
                                            , input$var2, "eyes. Yup! You're still you! You quickly go through your morning routine
                                            before heading out for the day.")})
-  output$Cats <- renderText({ paste("Brenda has",input$Cats,"cats.") })
-  output$namefriend <- renderText({ paste("You see your best friend",input$NameFriend,"running towards you with a concerned look.") })
+  output$Cats <- renderText({ paste("Brenda has",input$Cats,"cats.")})
+  output$namefriend <- renderText({ paste("You see your best friend",input$NameFriend,"running towards you with a concerned look.")})
   output$onyaway <- renderText({paste("Anyway, that's weird")})
   output$conflict <- renderText({paste("As you are walking down the sidewalk, you spot a group of guys approaching. 
                                        They look like trouble. One locks eyes with you for a little too long before
                                        walking up to you and saying:")})
   output$gang <- renderText({ paste("\"Don't mess with us, we're the",input$Gang,"Bunch. We rule these streets, capiche? 
                                     So why don't you mind your own business.\" 
-                                    Quite rude of them considering you were already minding your own business.") })
+                                    Quite rude of them considering you were already minding your own business.")})
   output$Buddy <- renderText({paste("\"Hey, that's my buddy, leave my buddy alone,\" ", "your friend says as they approach.")})
 }
 
