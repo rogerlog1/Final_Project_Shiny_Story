@@ -64,7 +64,7 @@ server <- function(input, output) {
                                            You take a glance at yourself in the mirror, noting your", input$var, "hair and"
                                            , input$var2, "eyes. Yup! You're still you! You quickly go through your morning routine
                                            before heading out for the day.")})
-  output$Cats <- renderText({ paste("Brenda has",input$Cats,"cats.")})
+  output$Cats <- renderText({ paste("It isn't long before you arive at the store. Brenda has",input$Cats,"cats.")})
   output$namefriend <- renderText({ paste("You see your best friend",input$NameFriend,"running towards you with a concerned look.")})
   output$onyaway <- renderText({paste("Anyway, that's weird")})
   output$conflict <- renderText({paste("As you are walking down the sidewalk, you spot a group of guys approaching. 
