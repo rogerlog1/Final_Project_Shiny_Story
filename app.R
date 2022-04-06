@@ -52,7 +52,11 @@ ui <- fluidPage(
       br(),
       textOutput("namefriend"),
       br(),
-      textOutput("Buddy")
+      textOutput("Buddy"),
+      br(),
+      textOutput("Ending"),
+      br(),
+      textOutput("TheEnding")
     )
   )
 )
@@ -68,7 +72,7 @@ server <- function(input, output) {
                                            You take a glance at yourself in the mirror, noting your", input$var, "hair and"
                                            , input$var2, "eyes. Yup! You're still you! You quickly go through your morning routine
                                            before heading out for the day.")})
-  output$Enter <- renderText({ paste("It isn't long before you arive at the store. As you enter , you catch a part
+  output$Enter <- renderText({ paste("It isn't long before you arive at the store. As you enter, you catch a part
                                     of a conversation between two elderly women.")})
   output$Cats1 <- renderText({ paste("\"Did you hear? Brenda got another cat.\"")})
   output$Cats2 <- renderText({ paste("\"Well golly, how many is that now?", input$Cats, "cats?\"")})
@@ -81,7 +85,13 @@ server <- function(input, output) {
   output$gang <- renderText({ paste("\"Don't mess with us, we're the",input$Gang,"Bunch. We rule these streets, capiche? 
                                     So why don't you mind your own business.\" 
                                     Quite rude of them considering you were already minding your own business.")})
-  output$Buddy <- renderText({paste("\"Hey, that's my buddy, leave my buddy alone,\" ", "your friend says as they approach.")})
+  output$Buddy <- renderText({paste("\"Hey, that's my buddy, leave my buddy alone,\" ", "your friend says as they approach.
+                                    The shadey group scoff and murmur before continuing on their way. \"Those guys were jerks.
+                                    Are you okay?\" your friend asks. You let them know that you're okay and ask if they would
+                                    like to go to", input$var3, "with you. \"Sure, I don't have anything going on,\" they reply.")})
+  output$Ending <- renderText({ paste("And so the two of you go on to have a lovely day at", input$var3, "and the" ,input$Gang,
+                                      "Bunch never messed with you again.")})
+  output$TheEnding <- renderText({ paste("The End")})
 }
 
 shinyApp(ui, server)

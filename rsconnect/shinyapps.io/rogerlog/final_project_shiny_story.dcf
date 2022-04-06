@@ -1,11 +1,13 @@
 name: final_project_shiny_story
-title:
+title: Final_Project_Shiny_Story
 username:
 account: rogerlog
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 6013046
-bundleId: 5764534
+bundleId: 5772146
 url: https://rogerlog.shinyapps.io/Final_Project_Shiny_Story/
-when: 1649111696.68855
-lastSyncTime: 1649111696.68856
+when: 1649283252.32066
+lastSyncTime: 1649283252.32068
+asMultiple: FALSE
+asStatic: FALSE
